@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
-    <style></style>
   </head>
   <body>
     <div class="snake-container">
@@ -21,6 +20,22 @@
           </div>
         </div>
         <div id="snake-head"><div></div></div>
+      </div>
+    </div>
+    <div id="controls">
+      <div class="control">
+        <input type="button" onclick="ChangeDir(0, -1)" />
+      </div>
+      <div class="layer">
+        <div class="control">
+          <input type="button" onclick="ChangeDir(-1, 0)" />
+        </div>
+        <div class="control">
+          <input type="button" onclick="ChangeDir(1, 0)" />
+        </div>
+      </div>
+      <div class="control">
+        <input type="button" onclick="ChangeDir(0, 1)" />
       </div>
     </div>
     <script src="main.js"></script>

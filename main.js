@@ -48,37 +48,28 @@ function SetInputListener() {
   document.addEventListener("keydown", function (event) {
     switch (event.key) {
       case "ArrowLeft":
-        if (xDir == 0 && !changedDir) {
-          xDir = -1;
-          yDir = 0;
-          changedDir = true;
-        }
+        ChangeDir(-1, 0);
         break;
       case "ArrowUp":
-        if (yDir == 0 && !changedDir) {
-          yDir = -1;
-          xDir = 0;
-          changedDir = true;
-        }
+        ChangeDir(0, -1);
         break;
       case "ArrowRight":
-        if (xDir == 0 && !changedDir) {
-          xDir = 1;
-          yDir = 0;
-          changedDir = true;
-        }
+        ChangeDir(1, 0);
         break;
       case "ArrowDown":
-        if (yDir == 0 && !changedDir) {
-          yDir = 1;
-          xDir = 0;
-          changedDir = true;
-        }
+        ChangeDir(0, 1);
         break;
     }
   });
 }
 
+function ChangeDir(x, y) {
+  if (!changedDir) {
+    xDir = xDir == 0 ? x : 0;
+    yDir = yDir == 0 ? y : 0;
+    changedDir = true;
+  }
+}
 //Game stuff
 function StartGame() {
   window.addEventListener("keydown", handleArrowKeys);
