@@ -95,7 +95,8 @@ body {
   padding: 0.5rem;
 }
 
-input {
+input,
+button {
   font-weight: bolder;
   transition: linear 0.1s;
   background-color: transparent;
@@ -104,7 +105,8 @@ input {
   border-radius: 7px;
 }
 
-input:hover {
+input:hover,
+button:hover {
   background-color: var(--accent-color2);
   color: var(--main-color);
 }
@@ -155,7 +157,7 @@ input:hover {
   width: 4rem;
   height: 4rem;
 }
-.control input {
+.control button {
   width: 100%;
   height: 100%;
 }
