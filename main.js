@@ -65,8 +65,14 @@ function SetInputListener() {
 
 function ChangeDir(x, y) {
   if (!changedDir) {
-    xDir = xDir == 0 ? x : 0;
-    yDir = yDir == 0 ? y : 0;
+    if (Math.abs(y) > 0 && yDir == 0) {
+      yDir = y;
+      xDir = 0;
+    }
+    if (Math.abs(x) > 0 && xDir == 0) {
+      xDir = x;
+      yDir = 0;
+    }
     changedDir = true;
   }
 }
