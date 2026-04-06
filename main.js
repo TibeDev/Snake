@@ -14,6 +14,7 @@ var unitType = "rem";
 
 //Snake stuff
 var snakeBodyParts = [];
+var amountPartsStart = 3;
 
 var snakeHead = document.getElementById("snake-head");
 snakeHead.style.display = "none";
@@ -29,7 +30,7 @@ snakeGrid.style.backgroundSize =
 
 //Fruits
 var fruits = [];
-var amountOfFruits = 2;
+var amountOfFruits = 5;
 
 //Game loop
 let gameLoop;
@@ -84,7 +85,10 @@ function StartGame() {
   ResetSnakePos();
 
   StartGameLoop();
-  AddBodyPart();
+
+  for (let i = 0; i < amountPartsStart; i++) {
+    AddBodyPart();
+  }
 
   for (let i = 0; i < amountOfFruits; i++) {
     AddNewFruit();
@@ -120,8 +124,13 @@ function GameLoop() {
   MoveSnakeHead();
 
   changedDir = false;
+  CheckEndGame();
 }
-
+function CheckEndGame() {
+  if (snakeBodyParts.length + 1 == amountOfTiles * amountOfTiles) {
+    StopGame();
+  }
+}
 //Adding element
 function AddBodyPart() {
   let newBodyPart = document.createElement("div");
@@ -143,6 +152,12 @@ function AddBodyPart() {
   snakeBodyParts.push(newBodyPart);
 }
 function AddNewFruit() {
+  if (
+    amountOfTiles * amountOfTiles - (snakeBodyParts.length + 1) ==
+    fruits.length
+  ) {
+    return;
+  }
   let newFruit = document.createElement("div");
   newFruit.className = "fruit";
 
