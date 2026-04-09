@@ -1,5 +1,5 @@
 # &lt;/SNAKE&gt;
-
+![Cover](art/cover.png) <br><br>
 A little snake game made with some simple HTML, CSS and JavaScript.
 
 # &lt;/WHERE TO PLAY?&gt;
