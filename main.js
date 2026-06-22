@@ -14,7 +14,7 @@ var unitType = "rem";
 
 //Snake stuff
 var snakeBodyParts = [];
-var amountPartsStart = 3;
+var amountPartsStart = 2;
 
 var snakeHead = document.getElementById("snake-head");
 snakeHead.style.display = "none";
